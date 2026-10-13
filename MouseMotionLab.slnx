@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MouseMotionLab.Core/MouseMotionLab.Core.csproj" />
+    <Project Path="src/MouseMotionLab.Capture/MouseMotionLab.Capture.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MouseMotionLab.Core.Tests/MouseMotionLab.Core.Tests.csproj" />
+    <Project Path="tests/MouseMotionLab.Capture.Tests/MouseMotionLab.Capture.Tests.csproj" />
+  </Folder>
+</Solution>
+

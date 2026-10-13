@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mousemotionlab.local/schemas/trajectory-v1.schema.json",
+  "title": "MouseMotionLab trajectory contracts v1",
+  "$ref": "#/$defs/trajectoryResult",
+  "$defs": {
+    "trajectoryRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dxCounts", "dyCounts", "dpi", "outputHz", "seed"],
+      "properties": {
+        "dxCounts": { "type": "integer" },
+        "dyCounts": { "type": "integer" },
+        "dpi": { "type": "integer", "minimum": 100, "maximum": 100000 },
+        "outputHz": { "type": "integer", "minimum": 125, "maximum": 8000 },
+        "seed": { "type": "integer" },
+        "mode": { "enum": ["baseline", "diffusion"], "default": "diffusion" }
+      },
+      "allOf": [
+        {
+          "not": {
+            "properties": {
+              "dxCounts": { "const": 0 },
+              "dyCounts": { "const": 0 }
+            },
+            "required": ["dxCounts", "dyCounts"]
+          }
+        }
+      ]
+    },
+    "trajectorySample": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["dtUs", "dx", "dy"],
+      "properties": {
+        "dtUs": { "type": "integer", "minimum": 1 },
+        "dx": { "type": "integer" },
+        "dy": { "type": "integer" }
+      }
+    },
+    "trajectoryResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schemaVersion",
+        "samples",
+        "clickAtUs",
+        "coverageScore",
+        "warnings",
+        "modelVersion",
+        "seed"
+      ],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "samples": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/trajectorySample" }
+        },
+        "clickAtUs": { "type": "integer", "minimum": 1 },
+        "coverageScore": { "type": "number", "minimum": 0, "maximum": 1 },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "modelVersion": { "type": "string", "minLength": 1 },
+        "seed": { "type": "integer" }
+      }
+    }
+  }
+}

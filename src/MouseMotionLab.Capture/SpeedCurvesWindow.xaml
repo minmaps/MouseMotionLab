@@ -1,0 +1,61 @@
+<Window x:Class="MouseMotionLab.Capture.SpeedCurvesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Données — courbes de vitesse"
+        Width="1000" Height="650" MinWidth="700" MinHeight="480"
+        WindowStartupLocation="CenterOwner"
+        Background="{StaticResource WindowBrush}">
+    <Grid Margin="22">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="0,0,0,12">
+            <Button x:Name="RefreshButton" DockPanel.Dock="Right" Content="Actualiser"
+                    Margin="16,0,0,0" VerticalAlignment="Center" Click="Refresh_Click" />
+            <StackPanel>
+                <TextBlock Text="Courbes de vitesse" FontSize="23" FontWeight="SemiBold" />
+                <TextBlock x:Name="DatasetSummaryText" Text="Chargement des essais acceptés…"
+                           Foreground="{StaticResource MutedTextBrush}" Margin="0,5,0,0" TextWrapping="Wrap" />
+            </StackPanel>
+        </DockPanel>
+
+        <DockPanel Grid.Row="1" Margin="0,0,0,12">
+            <CheckBox x:Name="LogScaleCheckBox" DockPanel.Dock="Right"
+                      Content="Échelle logarithmique"
+                      Foreground="{StaticResource TextBrush}"
+                      VerticalAlignment="Center" Margin="16,0,0,0"
+                      ToolTip="Rend les faibles vitesses lisibles lorsque les maxima sont très élevés. Le zéro reste affiché."
+                      Checked="Scale_Changed" Unchecked="Scale_Changed" />
+            <WrapPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,24,0">
+                <Rectangle Width="24" Height="3" Fill="#70B7FF" VerticalAlignment="Center" Margin="0,0,8,0" />
+                <TextBlock Text="Minimum" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,24,0">
+                <Rectangle Width="24" Height="3" Fill="#FFCE73" VerticalAlignment="Center" Margin="0,0,8,0" />
+                <TextBlock Text="Maximum" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Width="24" Height="3" Fill="#4ED6B2" VerticalAlignment="Center" Margin="0,0,8,0" />
+                <TextBlock Text="Moyenne de tous les essais" />
+            </StackPanel>
+            </WrapPanel>
+        </DockPanel>
+
+        <Border Grid.Row="2" Background="#0A1018" BorderBrush="#26384D" BorderThickness="1" CornerRadius="8">
+            <Canvas x:Name="SpeedChartCanvas" ClipToBounds="True" SizeChanged="Chart_SizeChanged"
+                    Background="Transparent" MouseMove="Chart_MouseMove" MouseLeave="Chart_MouseLeave" />
+        </Border>
+
+        <TextBlock x:Name="CursorReadoutText" Grid.Row="3" Margin="0,12,0,0"
+                   Foreground="{StaticResource MutedTextBrush}" TextWrapping="Wrap"
+                   Text="Survole le graphique pour lire les trois vitesses." />
+        <TextBlock Grid.Row="4" Margin="0,10,0,0" Foreground="{StaticResource MutedTextBrush}" TextWrapping="Wrap"
+                   Text="Temps aligné de 0 à 100 % de la durée de chaque essai. À chaque point : minimum, maximum et moyenne de tous les essais acceptés du dataset. Vitesses en mm/s, calculées avec les timestamps Raw Input et le DPI de chaque profil." />
+    </Grid>
+</Window>
