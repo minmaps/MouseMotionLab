@@ -1,0 +1,29 @@
+{
+  "config": {
+    "canonicalHz": 1000,
+    "maxDurationMs": 1000.0,
+    "maxLength": 1024,
+    "minDistanceMm": 0.5,
+    "minDurationMs": 20.0,
+    "splitSeed": 42
+  },
+  "databaseSha256": "f9c6f74e16c9aa823dda0913b40a06896e348213722265534e698f8c8af56b79",
+  "preparedRows": 120,
+  "rejected": {
+    "distance_too_short": 3
+  },
+  "schemaVersion": 1,
+  "sessionSplit": {
+    "080f67a0-0694-4737-98a0-21c5a9fb77bd": 0
+  },
+  "sourceDatabase": "C:\\Users\\RAID\\Desktop\\ai\\data\\mousemotion.db",
+  "splits": {
+    "test": 0,
+    "train": 120,
+    "validation": 0
+  },
+  "totalAcceptedRows": 123,
+  "warnings": [
+    "fewer_than_2000_trials"
+  ]
+}

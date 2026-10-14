@@ -1,0 +1,79 @@
+{
+  "coverage": {
+    "method": "standardized_knn",
+    "neighbors": 5,
+    "referenceCount": 942,
+    "threshold": 0.9064936572938522
+  },
+  "createdUtc": "2026-10-13T17:48:47.694141+00:00",
+  "datasetSha256": "f374c74241f46fe4564678f23ccfa75f12a8ee1a94d5e969aa6fd717b9d2e077",
+  "finalDurationLoss": 0.18689784691747974,
+  "finalLoss": {
+    "epoch": 500.0,
+    "trainLoss": 0.13928566077503107,
+    "validationLoss": 0.2906891405582428
+  },
+  "model": {
+    "canonicalHz": 1000,
+    "channels": [
+      64,
+      128,
+      256
+    ],
+    "diffusionSteps": 1000,
+    "durationComponents": 5,
+    "durationHiddenDim": 64,
+    "embeddingDim": 256,
+    "maxLength": 1024,
+    "samplingSteps": 50
+  },
+  "modelVersion": "mousemotion-diffusion-v1-20261013T174847Z",
+  "preparedDataset": "/content/mousemotion-20261013T172953633942Z/prepared",
+  "schemaVersion": 1,
+  "seed": 42,
+  "trainConfig": {
+    "batch_size": 16,
+    "channels": [
+      64,
+      128,
+      256
+    ],
+    "device": "cuda",
+    "diffusion_steps": 1000,
+    "duration_components": 5,
+    "duration_epochs": 150,
+    "duration_hidden_dim": 64,
+    "duration_learning_rate": 0.001,
+    "ema_decay": 0.999,
+    "embedding_dim": 256,
+    "epochs": 500,
+    "learning_rate": 0.0002,
+    "num_workers": 0,
+    "sampling_steps": 50,
+    "seed": 42,
+    "weight_decay": 0.0001
+  },
+  "trainingDomain": {
+    "distanceMm": {
+      "max": 184.51104736328125,
+      "min": 0.5080000162124634
+    },
+    "durationMs": {
+      "max": 952.9959106445312,
+      "min": 34.96200180053711
+    }
+  },
+  "trainingGeometry": {
+    "backtrackFractionP95": 0.004526851925638323,
+    "lateralFractionMedian": 0.020686667808433867,
+    "lateralFractionP95": 0.08163227019369967,
+    "overshootFractionP95": 0.030170672698192687,
+    "pathRatioMedian": 1.015646590692699,
+    "pathRatioP95": 1.1384439579562462
+  },
+  "trainingRows": 942,
+  "validationRows": 1,
+  "warnings": [
+    "fewer_than_2000_trials"
+  ]
+}

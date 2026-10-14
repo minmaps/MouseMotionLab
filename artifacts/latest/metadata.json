@@ -1,0 +1,79 @@
+{
+  "coverage": {
+    "method": "standardized_knn",
+    "neighbors": 5,
+    "referenceCount": 120,
+    "threshold": 1.862639777654879
+  },
+  "createdUtc": "2026-10-13T15:39:53.232132+00:00",
+  "datasetSha256": "f9c6f74e16c9aa823dda0913b40a06896e348213722265534e698f8c8af56b79",
+  "finalDurationLoss": 0.11085775196552276,
+  "finalLoss": {
+    "epoch": 100.0,
+    "trainLoss": 0.27851376285155616,
+    "validationLoss": null
+  },
+  "model": {
+    "canonicalHz": 1000,
+    "channels": [
+      64,
+      128,
+      256
+    ],
+    "diffusionSteps": 1000,
+    "durationComponents": 5,
+    "durationHiddenDim": 64,
+    "embeddingDim": 256,
+    "maxLength": 1024,
+    "samplingSteps": 50
+  },
+  "modelVersion": "mousemotion-diffusion-v1-20261013T153953Z",
+  "preparedDataset": "C:\\Users\\RAID\\Desktop\\ai\\prepared\\default",
+  "schemaVersion": 1,
+  "seed": 42,
+  "trainConfig": {
+    "batch_size": 8,
+    "channels": [
+      64,
+      128,
+      256
+    ],
+    "device": "cuda",
+    "diffusion_steps": 1000,
+    "duration_components": 5,
+    "duration_epochs": 100,
+    "duration_hidden_dim": 64,
+    "duration_learning_rate": 0.001,
+    "ema_decay": 0.999,
+    "embedding_dim": 256,
+    "epochs": 100,
+    "learning_rate": 0.0002,
+    "num_workers": 0,
+    "sampling_steps": 50,
+    "seed": 42,
+    "weight_decay": 0.0001
+  },
+  "trainingDomain": {
+    "distanceMm": {
+      "max": 33.57069778442383,
+      "min": 0.793749988079071
+    },
+    "durationMs": {
+      "max": 457.034912109375,
+      "min": 49.9552001953125
+    }
+  },
+  "trainingGeometry": {
+    "backtrackFractionP95": 0.023503702625148365,
+    "lateralFractionMedian": 0.03121901904700053,
+    "lateralFractionP95": 0.09447723492885417,
+    "overshootFractionP95": 0.040967394833702736,
+    "pathRatioMedian": 1.0381843475527617,
+    "pathRatioP95": 1.2727350905321066
+  },
+  "trainingRows": 120,
+  "validationRows": 0,
+  "warnings": [
+    "fewer_than_2000_trials"
+  ]
+}
