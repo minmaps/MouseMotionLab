@@ -127,6 +127,10 @@ Une demande éloignée du dataset est générée mais porte un avertissement `ou
 Pour un petit dataset, le résidu est aussi limité à l’enveloppe géométrique observée afin
 d’éviter une trajectoire anormalement bruitée, sans modifier l’endpoint demandé.
 
+Pour intégrer le modèle dans un logiciel de mouvements de souris, consulter le
+[guide d’intégration](docs/integration-modele.md) : unités, artefact, exemples Python/C#,
+contrat JSON et ordonnancement du rejeu.
+
 ## Structure
 
 - `src/MouseMotionLab.Capture` : WPF, Raw Input, scène FPS 3D et replay caméra sandbox.
